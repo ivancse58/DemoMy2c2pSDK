@@ -1,0 +1,73 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string name="app_name">My2c2pSDK Demo</string>
+    <string name="btn_submit">Submit</string>
+    <string name="btn_back">Back</string>
+    <string name="btn_get">Get</string>
+   
+    <string name="version">Version</string>
+    <string name="paymentUI">Payment UI</string>
+    <string name="enableStoreCard">Enable Store Card</string>
+    <string name="merchant_id">Merchant ID</string>
+    <string name="sub_merchant_id">Sub Merchant ID</string>
+	<string name="unique_transaction_id">Unique Transaction Code</string>
+	<string name="description">Description</string>
+	<string name="amount">Amount</string>
+	<string name="currency_code">Currency Code</string>
+	<string name="payment_channel">Payment Channel (For Non-UI Payment Request)</string>
+	<string name="payment_option">Payment Option (For UI Payment Request)</string>
+	<string name="statement_descriptor">Statement Descriptor</string>
+	<string name="enableTokenizeWithoutAuthorization">Enable Tokenize card without authorization</string>
+		
+	<string name="card_number">Card Number</string>
+	<string name="card_expiry_month">Card Expiry Month</string>
+	<string name="card_expiry_year">Card Expiry Year</string>
+	<string name="security_code">Security Code</string>
+	<string name="pin">Pin</string>
+	<string name="pan_bank">PAN Bank</string>
+	<string name="pan_country">PAN Country</string>
+	<string name="card_holder_name">Card Holder Name</string>
+	<string name="card_holder_email">Card Holder Email</string>
+	<string name="category_id">Category ID</string>
+	<string name="store_card">Save Store Card?</string>
+	<string name="store_unique_id">StoreCard Unique ID</string>
+	<string name="use_stored_card_only">Use Stored Card only (UI Request)</string>
+	
+	<string name="user_define1">User Define1</string>
+	<string name="user_define2">User Define2</string>
+	<string name="user_define3">User Define3</string>
+	<string name="user_define4">User Define4</string>
+	<string name="user_define5">User Define5</string>
+	
+	<string name="payment_123">123 Payment</string>
+	<string name="agent_code">Agent Code</string>
+	<string name="channel_code">Channel Code</string>
+	<string name="mobile_no">Mobile No</string>
+	
+	<string name="ipp_transaction">IPP transaction</string>
+	<string name="installement_period">Installment period</string>
+	<string name="interest_type">Interest type(C/M)</string>
+	<string name="ipp_product_code">Product code</string>
+	<string name="ipp_installment_peroid_filter">Installment period filter (UI Request)</string>
+	<string name="ipp_installment_type">Installment Type</string>
+	
+	<string name="samsung_pay_header_title">Samsung Pay</string>
+	<string name="samsung_pay_service_id">Service ID</string>
+	<string name="samsung_pay_merchant_name">Merchant Name (Non-UI Request)</string>
+	
+	<string name="gcash_header_title">GCASH</string>
+	<string name="gcash_account_no">Account No.</string>
+	
+	<string name="request3DS">request 3DS(Y/N/F)</string>
+	<string name="recurring">is Recurring</string>
+	<string name="invoice_prefix">Invoice Prefix</string>
+    <string name="recurring_amount">Recurring amount</string>
+	<string name="allow_accumulate">Allow accumulate</string>
+	<string name="max_accumulate_amount">Max Accumulate amount</string>
+	<string name="recurring_interval">Recurring interval</string>
+	<string name="recurring_count">Recurring count</string>
+	<string name="charge_next_date">Charge next date</string>
+	<string name="promotion">Promotion</string>
+	<string name="hash_value">Secret Key</string>
+	<string name="prod_mode">Production Mode</string>
+</resources>

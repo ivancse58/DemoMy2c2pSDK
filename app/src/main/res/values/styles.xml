@@ -1,0 +1,100 @@
+<resources xmlns:android="http://schemas.android.com/apk/res/android">
+
+    <!--
+        Base application theme, dependent on API level. This theme is replaced
+        by AppBaseTheme from res/values-vXX/styles.xml on newer devices.
+    -->
+    <style name="AppBaseTheme" parent="android:Theme.Light">
+        <!--
+            Theme customizations available in newer API levels can go in
+            res/values-vXX/styles.xml, while customizations related to
+            backward-compatibility can go here.
+        -->
+    </style>
+
+    <!-- Application theme. -->
+    <style name="AppTheme" parent="@android:style/Theme.NoTitleBar">
+        <!-- All customizations that are NOT specific to a particular API-level can go here. -->
+    </style>
+
+    <style name="Theme.Transparent" parent="android:Theme">
+    <item name="android:windowIsTranslucent">true</item>
+    <item name="android:windowBackground">@android:color/transparent</item>
+    <item name="android:windowContentOverlay">@null</item>
+    <item name="android:windowNoTitle">true</item>
+    <item name="android:windowIsFloating">true</item>
+    <item name="android:backgroundDimEnabled">false</item>
+  </style>
+  
+    
+    
+     <!-- Text appearance -->
+    <style name="TextAppearance" parent="android:TextAppearance">
+        <item name="android:textSize">16sp</item>
+    </style>
+    <style name="TextAppearance.Small">
+        <item name="android:textSize">11sp</item>
+    </style>
+    <style name="TextAppearance.Medium">
+    </style>
+     <style name="TextAppearance.Medium.Bold">
+        <item name="android:textStyle">bold</item>
+    </style>
+    <style name="TextAppearance.Large">
+        <item name="android:textSize">20sp</item>
+    </style>
+	 <style name="TextAppearance.Large.Bold">
+        <item name="android:textStyle">bold</item>
+        <item name="android:textColor">@android:color/black</item>
+    </style>
+     <style name="TextAppearance.Medium1">
+          <item name="android:textSize">14sp</item>
+    </style>
+    
+    <style name="BodyWrapper">
+        <item name="android:layout_width">fill_parent</item>
+        <item name="android:layout_height">fill_parent</item>
+        <item name="android:orientation">vertical</item>
+    </style>
+    
+    <style name="FormWrapper" >
+        <item name="android:layout_width">fill_parent</item>
+        <item name="android:layout_height">wrap_content</item>
+        <item name="android:orientation">vertical</item>
+    </style>
+
+    <style name="FormSeparator" >
+        <item name="android:background">@color/grey</item>
+        <item name="android:layout_height">0.5dip</item>
+        <item name="android:layout_width">fill_parent</item>
+         <item name="android:layout_marginTop">5dip</item>
+    </style>
+
+    
+    
+     <style name="TextViewForm">
+        <item name="android:textSize">13sp</item>
+         <item name="android:paddingLeft">10dip</item>
+         <item name="android:layout_marginLeft">5dip</item>
+         <item name="android:paddingTop">10dip</item>
+        <item name="android:gravity">left|center_vertical</item>
+        <item name="android:layout_width">fill_parent</item>
+        <item name="android:layout_height">wrap_content</item>
+        <item name="android:textColor">@color/black</item>
+        <item name="android:textStyle">bold</item>
+   
+		
+    </style>
+    
+      <style name="Widget.EditText" parent="android:Widget.EditText">
+        <item name="android:textSize">16sp</item>
+        <item name="android:textColor">@android:color/black</item>
+        <item name="android:layout_width">fill_parent</item>
+
+        <item name="android:layout_height">wrap_content</item>
+        <item name="android:background">@drawable/edit_text</item>
+         <item name="android:layout_marginLeft">8dip</item>
+          <item name="android:layout_marginRight">8dip</item>
+        <item name="android:inputType">text|textNoSuggestions</item>
+    </style>
+</resources>

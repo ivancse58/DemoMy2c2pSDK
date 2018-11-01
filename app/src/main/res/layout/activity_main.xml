@@ -1,0 +1,964 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    style="@style/BodyWrapper"
+    android:background="@android:color/white">
+
+    <RelativeLayout
+        android:id="@+id/rl_top"
+        android:layout_width="fill_parent"
+        android:layout_height="wrap_content"
+        android:background="@color/blue"
+        android:focusable="true"
+        android:focusableInTouchMode="true">
+
+        <Button
+            android:id="@+id/btn_back"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignParentLeft="true"
+            android:text="@string/btn_back" />
+
+        <Button
+            android:id="@+id/btn_submit"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignParentRight="true"
+            android:text="@string/btn_submit" />
+    </RelativeLayout>
+
+    <ScrollView
+        android:id="@+id/sv_response"
+        android:layout_width="fill_parent"
+        android:layout_height="fill_parent"
+        android:layout_below="@+id/rl_top"
+        android:background="@android:color/white"
+        android:fillViewport="true"
+        android:visibility="gone">
+
+        <LinearLayout
+            android:layout_width="fill_parent"
+            android:layout_height="wrap_content"
+            android:layout_margin="10dip"
+            android:orientation="vertical">
+
+            <TextView
+                android:layout_width="fill_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginBottom="10dip"
+                android:text="Response:"
+                android:textColor="@android:color/black" />
+
+            <TextView
+                android:id="@+id/tv_response"
+                android:layout_width="fill_parent"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center"
+                android:layout_marginLeft="10dip"
+                android:layout_marginRight="10dip"
+                android:minHeight="100dp"
+                android:textAppearance="?android:attr/textAppearanceMedium"
+                android:textColor="@color/black"
+                android:textIsSelectable="true"
+                android:textSize="13sp" />
+        </LinearLayout>
+    </ScrollView>
+
+    <ScrollView
+        android:id="@+id/sv_data"
+        android:layout_width="fill_parent"
+        android:layout_height="fill_parent"
+        android:layout_below="@+id/rl_top"
+        android:background="@android:color/white"
+        android:fillViewport="true">
+
+        <LinearLayout
+            android:layout_width="fill_parent"
+            android:layout_height="wrap_content"
+            android:orientation="vertical">
+
+            <LinearLayout
+                android:layout_width="fill_parent"
+                android:layout_height="wrap_content"
+                android:background="#FFFAF0"
+                android:orientation="vertical">
+
+                <TextView
+                    android:id="@+id/tv_version"
+                    android:layout_width="fill_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginRight="5dip"
+                    android:gravity="right"
+                    android:textSize="10sp" />
+
+                <LinearLayout style="@style/FormWrapper">
+
+                    <TextView
+                        style="@style/TextViewForm"
+                        android:paddingTop="0dip"
+                        android:text="@string/prod_mode" />
+
+                    <ToggleButton
+                        android:id="@+id/toogle_prodMode"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_marginLeft="20dip"
+                        android:textOff="OFF"
+                        android:textOn="ON"
+                        android:textSize="12sp" />
+
+                    <View style="@style/FormSeparator" />
+                </LinearLayout>
+
+                <LinearLayout style="@style/FormWrapper">
+
+                    <TextView
+                        style="@style/TextViewForm"
+                        android:paddingTop="0dip"
+                        android:text="@string/version" />
+
+                    <EditText
+                        android:id="@+id/et_version"
+                        style="@style/Widget.EditText"
+                        android:inputType="numberDecimal|numberSigned" />
+
+                    <View style="@style/FormSeparator" />
+                </LinearLayout>
+
+                <LinearLayout
+                    android:id="@+id/layout_payment_channel"
+                    style="@style/FormWrapper">
+
+                    <TextView
+                        style="@style/TextViewForm"
+                        android:paddingTop="0dip"
+                        android:text="@string/payment_channel" />
+
+                    <Spinner
+                        android:id="@+id/spinner_payment_channel"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_marginLeft="10dip"
+                        android:layout_marginRight="10dip" />
+
+                    <View style="@style/FormSeparator" />
+                </LinearLayout>
+
+                <LinearLayout
+                    android:id="@+id/layout_payment_option"
+                    style="@style/FormWrapper">
+
+                    <TextView
+                        style="@style/TextViewForm"
+                        android:paddingTop="0dip"
+                        android:text="@string/payment_option" />
+
+                    <Spinner
+                        android:id="@+id/spinner_payment_option"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_marginLeft="10dip"
+                        android:layout_marginRight="10dip" />
+
+                    <View style="@style/FormSeparator" />
+                </LinearLayout>
+
+                <LinearLayout style="@style/FormWrapper">
+
+                    <TextView
+                        style="@style/TextViewForm"
+                        android:text="@string/paymentUI" />
+
+                    <ToggleButton
+                        android:id="@+id/toogle_paymentUI"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_marginLeft="20dip"
+                        android:textOff="OFF"
+                        android:textOn="ON"
+                        android:textSize="12sp" />
+
+                    <TextView
+                        style="@style/TextViewForm"
+                        android:text="@string/enableStoreCard" />
+
+                    <ToggleButton
+                        android:id="@+id/toogle_enableStoreCard"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_marginLeft="20dip"
+                        android:textOff="OFF"
+                        android:textOn="ON"
+                        android:textSize="12sp" />
+
+                    <TextView
+                        style="@style/TextViewForm"
+                        android:text="@string/enableTokenizeWithoutAuthorization" />
+
+                    <ToggleButton
+                        android:id="@+id/toogle_enableTokenizeWithoutAuthorization"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_marginLeft="20dip"
+                        android:textOff="OFF"
+                        android:textOn="ON"
+                        android:textSize="12sp" />
+
+                    <View style="@style/FormSeparator" />
+                </LinearLayout>
+
+                <LinearLayout style="@style/FormWrapper">
+
+                    <TextView
+                        style="@style/TextViewForm"
+                        android:paddingTop="0dip"
+                        android:text="@string/merchant_id" />
+
+                    <EditText
+                        android:id="@+id/et_merchant_id"
+                        style="@style/Widget.EditText" />
+
+                    <TextView
+                        style="@style/TextViewForm"
+                        android:paddingTop="0dip"
+                        android:text="@string/sub_merchant_id" />
+
+                    <EditText
+                        android:id="@+id/et_sub_merchant_id"
+                        style="@style/Widget.EditText" />
+
+                    <View style="@style/FormSeparator" />
+                </LinearLayout>
+
+                <LinearLayout style="@style/FormWrapper">
+
+                    <TextView
+                        style="@style/TextViewForm"
+                        android:text="@string/hash_value" />
+
+                    <EditText
+                        android:id="@+id/et_secretKey"
+                        style="@style/Widget.EditText" />
+
+                    <View style="@style/FormSeparator" />
+                </LinearLayout>
+
+                <LinearLayout style="@style/FormWrapper">
+
+                    <TextView
+                        style="@style/TextViewForm"
+                        android:text="@string/request3DS" />
+
+                    <EditText
+                        android:id="@+id/et_request_3ds"
+                        style="@style/Widget.EditText" />
+
+                    <View style="@style/FormSeparator" />
+                </LinearLayout>
+
+                <LinearLayout style="@style/FormWrapper">
+
+                    <RelativeLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="match_parent">
+
+                        <TextView
+                            android:id="@+id/tv_txnId"
+                            style="@style/TextViewForm"
+                            android:layout_toLeftOf="@+id/btn_get"
+                            android:text="@string/unique_transaction_id" />
+
+                        <EditText
+                            android:id="@+id/et_unique_transaction_id"
+                            style="@style/Widget.EditText"
+                            android:layout_below="@+id/tv_txnId"
+                            android:layout_toLeftOf="@+id/btn_get" />
+
+                        <Button
+                            android:id="@+id/btn_get"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_alignParentRight="true"
+                            android:layout_centerVertical="true"
+                            android:layout_marginRight="5dip"
+                            android:paddingLeft="20dip"
+                            android:paddingRight="20dip"
+                            android:text="@string/btn_get" />
+                    </RelativeLayout>
+
+                    <View style="@style/FormSeparator" />
+                </LinearLayout>
+
+                <LinearLayout style="@style/FormWrapper">
+
+                    <TextView
+                        style="@style/TextViewForm"
+                        android:text="@string/description" />
+
+                    <EditText
+                        android:id="@+id/et_description"
+                        style="@style/Widget.EditText" />
+
+                    <View style="@style/FormSeparator" />
+                </LinearLayout>
+
+                <LinearLayout style="@style/FormWrapper">
+
+                    <TextView
+                        style="@style/TextViewForm"
+                        android:text="@string/statement_descriptor" />
+
+                    <EditText
+                        android:id="@+id/et_statement_descriptor"
+                        style="@style/Widget.EditText" />
+
+                    <View style="@style/FormSeparator" />
+                </LinearLayout>
+
+                <LinearLayout style="@style/FormWrapper">
+
+                    <TextView
+                        style="@style/TextViewForm"
+                        android:text="@string/amount" />
+
+                    <EditText
+                        android:id="@+id/et_amount"
+                        style="@style/Widget.EditText"
+                        android:inputType="numberDecimal|numberSigned" />
+
+                    <View style="@style/FormSeparator" />
+                </LinearLayout>
+
+                <LinearLayout style="@style/FormWrapper">
+
+                    <TextView
+                        style="@style/TextViewForm"
+                        android:text="@string/currency_code" />
+
+                    <EditText
+                        android:id="@+id/et_currency_code"
+                        style="@style/Widget.EditText"
+                        android:clickable="true"
+                        android:focusable="false"
+                        android:inputType="number" />
+
+                    <View style="@style/FormSeparator" />
+                </LinearLayout>
+            </LinearLayout>
+
+            <LinearLayout
+                android:layout_width="fill_parent"
+                android:layout_height="wrap_content"
+                android:background="#FAEBD7"
+                android:orientation="vertical">
+
+                <LinearLayout style="@style/FormWrapper">
+
+                    <TextView
+                        style="@style/TextViewForm"
+                        android:text="@string/store_unique_id" />
+
+                    <EditText
+                        android:id="@+id/et_store_unique_id"
+                        style="@style/Widget.EditText" />
+
+                </LinearLayout>
+
+                <LinearLayout style="@style/FormWrapper">
+
+                    <TextView
+                        style="@style/TextViewForm"
+                        android:text="@string/use_stored_card_only" />
+
+                    <ToggleButton
+                        android:id="@+id/toogle_useStoredCardOnly"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_marginLeft="20dip"
+                        android:textOff="OFF"
+                        android:textOn="ON"
+                        android:textSize="12sp" />
+
+                    <View style="@style/FormSeparator" />
+                </LinearLayout>
+
+                <LinearLayout style="@style/FormWrapper">
+
+                    <TextView
+                        style="@style/TextViewForm"
+                        android:text="@string/store_card" />
+
+                    <ToggleButton
+                        android:id="@+id/toogle_store_card"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_marginLeft="20dip"
+                        android:textOff="OFF"
+                        android:textOn="ON"
+                        android:textSize="12sp" />
+                </LinearLayout>
+
+                <LinearLayout style="@style/FormWrapper">
+
+                    <TextView
+                        style="@style/TextViewForm"
+                        android:text="@string/card_number" />
+
+                    <EditText
+                        android:id="@+id/et_card_number"
+                        style="@style/Widget.EditText"
+                        android:inputType="number"
+                        android:maxLength="19" />
+
+                    <View style="@style/FormSeparator" />
+                </LinearLayout>
+
+                <LinearLayout style="@style/FormWrapper">
+
+                    <TextView
+                        style="@style/TextViewForm"
+                        android:text="@string/card_expiry_month" />
+
+                    <EditText
+                        android:id="@+id/et_card_expiry_month"
+                        style="@style/Widget.EditText"
+                        android:hint="MM"
+                        android:inputType="number" />
+
+                </LinearLayout>
+
+                <LinearLayout style="@style/FormWrapper">
+
+                    <TextView
+                        style="@style/TextViewForm"
+                        android:text="@string/card_expiry_year" />
+
+                    <EditText
+                        android:id="@+id/et_card_expiry_year"
+                        style="@style/Widget.EditText"
+                        android:hint="YYYY"
+                        android:inputType="number" />
+
+                    <View style="@style/FormSeparator" />
+                </LinearLayout>
+
+                <LinearLayout style="@style/FormWrapper">
+
+                    <TextView
+                        style="@style/TextViewForm"
+                        android:text="@string/security_code" />
+
+                    <EditText
+                        android:id="@+id/et_security_code"
+                        style="@style/Widget.EditText"
+                        android:inputType="number" />
+
+                </LinearLayout>
+
+                <LinearLayout style="@style/FormWrapper">
+
+                    <TextView
+                        style="@style/TextViewForm"
+                        android:text="@string/pin" />
+
+                    <EditText
+                        android:id="@+id/et_pin"
+                        style="@style/Widget.EditText"
+                        android:inputType="number" />
+
+                    <View style="@style/FormSeparator" />
+                </LinearLayout>
+
+                <LinearLayout style="@style/FormWrapper">
+
+                    <TextView
+                        style="@style/TextViewForm"
+                        android:text="@string/pan_country" />
+
+                    <EditText
+                        android:id="@+id/et_pan_country"
+                        style="@style/Widget.EditText" />
+
+                </LinearLayout>
+
+                <LinearLayout style="@style/FormWrapper">
+
+                    <TextView
+                        style="@style/TextViewForm"
+                        android:text="@string/pan_bank" />
+
+                    <EditText
+                        android:id="@+id/et_pan_bank"
+                        style="@style/Widget.EditText" />
+
+                    <View style="@style/FormSeparator" />
+                </LinearLayout>
+
+                <LinearLayout style="@style/FormWrapper">
+
+                    <TextView
+                        style="@style/TextViewForm"
+                        android:text="@string/card_holder_name" />
+
+                    <EditText
+                        android:id="@+id/et_card_holder_name"
+                        style="@style/Widget.EditText" />
+
+                </LinearLayout>
+
+                <LinearLayout style="@style/FormWrapper">
+
+                    <TextView
+                        style="@style/TextViewForm"
+                        android:text="@string/card_holder_email" />
+
+                    <EditText
+                        android:id="@+id/et_card_holder_email"
+                        style="@style/Widget.EditText"
+                        android:inputType="textEmailAddress" />
+
+                    <View style="@style/FormSeparator" />
+                </LinearLayout>
+            </LinearLayout>
+
+            <LinearLayout
+                android:layout_width="fill_parent"
+                android:layout_height="wrap_content"
+                android:background="#FFE4C4"
+                android:orientation="vertical">
+
+                <LinearLayout style="@style/FormWrapper">
+
+                    <TextView
+                        style="@style/TextViewForm"
+                        android:text="@string/category_id" />
+
+                    <EditText
+                        android:id="@+id/et_category_id"
+                        style="@style/Widget.EditText" />
+
+                    <View style="@style/FormSeparator" />
+                </LinearLayout>
+
+                <LinearLayout style="@style/FormWrapper">
+
+                    <TextView
+                        style="@style/TextViewForm"
+                        android:text="@string/user_define1" />
+
+                    <EditText
+                        android:id="@+id/user_define1"
+                        style="@style/Widget.EditText" />
+
+                    <View style="@style/FormSeparator" />
+                </LinearLayout>
+
+                <LinearLayout style="@style/FormWrapper">
+
+                    <TextView
+                        style="@style/TextViewForm"
+                        android:text="@string/user_define2" />
+
+                    <EditText
+                        android:id="@+id/user_define2"
+                        style="@style/Widget.EditText" />
+
+                    <View style="@style/FormSeparator" />
+                </LinearLayout>
+
+                <LinearLayout style="@style/FormWrapper">
+
+                    <TextView
+                        style="@style/TextViewForm"
+                        android:text="@string/user_define3" />
+
+                    <EditText
+                        android:id="@+id/user_define3"
+                        style="@style/Widget.EditText" />
+
+                    <View style="@style/FormSeparator" />
+                </LinearLayout>
+
+                <LinearLayout style="@style/FormWrapper">
+
+                    <TextView
+                        style="@style/TextViewForm"
+                        android:text="@string/user_define4" />
+
+                    <EditText
+                        android:id="@+id/user_define4"
+                        style="@style/Widget.EditText" />
+
+                    <View style="@style/FormSeparator" />
+                </LinearLayout>
+
+                <LinearLayout style="@style/FormWrapper">
+
+                    <TextView
+                        style="@style/TextViewForm"
+                        android:text="@string/user_define5" />
+
+                    <EditText
+                        android:id="@+id/user_define5"
+                        style="@style/Widget.EditText" />
+
+                    <View style="@style/FormSeparator" />
+                </LinearLayout>
+
+                <LinearLayout style="@style/FormWrapper">
+
+                    <TextView
+                        style="@style/TextViewForm"
+                        android:text="@string/promotion" />
+
+                    <EditText
+                        android:id="@+id/et_promotion"
+                        style="@style/Widget.EditText" />
+
+                    <View style="@style/FormSeparator" />
+                </LinearLayout>
+            </LinearLayout>
+
+            <!-- 123 -->
+            <LinearLayout
+                android:layout_width="fill_parent"
+                android:layout_height="wrap_content"
+                android:background="#ADDFFF"
+                android:orientation="vertical">
+
+                <LinearLayout style="@style/FormWrapper">
+
+                    <TextView
+                        style="@style/TextViewForm"
+                        android:text="@string/payment_123" />
+
+                    <View style="@style/FormSeparator" />
+                </LinearLayout>
+
+                <LinearLayout style="@style/FormWrapper">
+
+                    <TextView
+                        style="@style/TextViewForm"
+                        android:text="@string/agent_code" />
+
+                    <EditText
+                        android:id="@+id/et_agent_code"
+                        style="@style/Widget.EditText" />
+
+                    <View style="@style/FormSeparator" />
+                </LinearLayout>
+
+                <LinearLayout style="@style/FormWrapper">
+
+                    <TextView
+                        style="@style/TextViewForm"
+                        android:text="@string/channel_code" />
+
+                    <EditText
+                        android:id="@+id/et_channel_code"
+                        style="@style/Widget.EditText" />
+
+                    <View style="@style/FormSeparator" />
+                </LinearLayout>
+
+                <LinearLayout style="@style/FormWrapper">
+
+                    <TextView
+                        style="@style/TextViewForm"
+                        android:text="@string/mobile_no" />
+
+                    <EditText
+                        android:id="@+id/et_mobile_no"
+                        style="@style/Widget.EditText" />
+
+                    <View style="@style/FormSeparator" />
+                </LinearLayout>
+            </LinearLayout>
+
+            <!-- recurring -->
+
+            <LinearLayout
+                android:layout_width="fill_parent"
+                android:layout_height="wrap_content"
+                android:background="#f6f6f6"
+                android:orientation="vertical">
+
+                <LinearLayout style="@style/FormWrapper">
+
+                    <TextView
+                        style="@style/TextViewForm"
+                        android:text="@string/recurring" />
+
+                    <ToggleButton
+                        android:id="@+id/toogle_recurring"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_marginLeft="20dip"
+                        android:textOff="OFF"
+                        android:textOn="ON"
+                        android:textSize="12sp" />
+
+                    <View style="@style/FormSeparator" />
+                </LinearLayout>
+
+                <LinearLayout style="@style/FormWrapper">
+
+                    <TextView
+                        style="@style/TextViewForm"
+                        android:text="@string/invoice_prefix" />
+
+                    <EditText
+                        android:id="@+id/et_invoice_prefix"
+                        style="@style/Widget.EditText" />
+
+                    <View style="@style/FormSeparator" />
+                </LinearLayout>
+
+                <LinearLayout style="@style/FormWrapper">
+
+                    <TextView
+                        style="@style/TextViewForm"
+                        android:text="@string/recurring_amount" />
+
+                    <EditText
+                        android:id="@+id/et_recurring_amount"
+                        style="@style/Widget.EditText"
+                        android:inputType="numberDecimal|numberSigned" />
+
+                    <View style="@style/FormSeparator" />
+                </LinearLayout>
+
+                <LinearLayout style="@style/FormWrapper">
+
+                    <TextView
+                        style="@style/TextViewForm"
+                        android:text="@string/recurring_interval" />
+
+                    <EditText
+                        android:id="@+id/et_recurring_interval"
+                        style="@style/Widget.EditText"
+                        android:inputType="number" />
+
+                    <View style="@style/FormSeparator" />
+                </LinearLayout>
+
+                <LinearLayout style="@style/FormWrapper">
+
+                    <TextView
+                        style="@style/TextViewForm"
+                        android:text="@string/recurring_count" />
+
+                    <EditText
+                        android:id="@+id/et_recurring_count"
+                        style="@style/Widget.EditText"
+                        android:inputType="number" />
+
+                    <View style="@style/FormSeparator" />
+                </LinearLayout>
+
+                <LinearLayout style="@style/FormWrapper">
+
+                    <TextView
+                        style="@style/TextViewForm"
+                        android:text="@string/charge_next_date" />
+
+                    <EditText
+                        android:id="@+id/et_charge_next_date"
+                        style="@style/Widget.EditText"
+                        android:hint="DDMMYYYY" />
+
+                    <View style="@style/FormSeparator" />
+                </LinearLayout>
+
+                <LinearLayout style="@style/FormWrapper">
+
+                    <TextView
+                        style="@style/TextViewForm"
+                        android:text="@string/allow_accumulate" />
+
+                    <ToggleButton
+                        android:id="@+id/toogle_allow_accumulate"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_marginLeft="20dip"
+                        android:textOff="OFF"
+                        android:textOn="ON"
+                        android:textSize="12sp" />
+
+                    <View style="@style/FormSeparator" />
+                </LinearLayout>
+
+                <LinearLayout style="@style/FormWrapper">
+
+                    <TextView
+                        style="@style/TextViewForm"
+                        android:text="@string/max_accumulate_amount" />
+
+                    <EditText
+                        android:id="@+id/et_max_accumulate_amount"
+                        style="@style/Widget.EditText"
+                        android:inputType="numberDecimal|numberSigned" />
+
+                    <View style="@style/FormSeparator" />
+                </LinearLayout>
+            </LinearLayout>
+
+            <LinearLayout
+                android:layout_width="fill_parent"
+                android:layout_height="wrap_content"
+                android:background="#FFFACD"
+                android:orientation="vertical">
+
+                <LinearLayout style="@style/FormWrapper">
+
+                    <TextView
+                        style="@style/TextViewForm"
+                        android:text="@string/ipp_transaction" />
+
+                    <ToggleButton
+                        android:id="@+id/toogle_ipp_transaction"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_marginLeft="20dip"
+                        android:textOff="OFF"
+                        android:textOn="ON"
+                        android:textSize="12sp" />
+
+                    <View style="@style/FormSeparator" />
+                </LinearLayout>
+
+                <LinearLayout style="@style/FormWrapper">
+
+                    <TextView
+                        style="@style/TextViewForm"
+                        android:text="@string/installement_period" />
+
+                    <EditText
+                        android:id="@+id/et_installement_period"
+                        style="@style/Widget.EditText"
+                        android:inputType="number" />
+
+                    <View style="@style/FormSeparator" />
+                </LinearLayout>
+
+                <LinearLayout style="@style/FormWrapper">
+
+                    <TextView
+                        style="@style/TextViewForm"
+                        android:text="@string/interest_type" />
+
+                    <EditText
+                        android:id="@+id/et_interest_type"
+                        style="@style/Widget.EditText" />
+
+                    <View style="@style/FormSeparator" />
+                </LinearLayout>
+
+                <LinearLayout style="@style/FormWrapper">
+
+                    <TextView
+                        style="@style/TextViewForm"
+                        android:text="@string/ipp_product_code" />
+
+                    <EditText
+                        android:id="@+id/et_ipp_product_code"
+                        style="@style/Widget.EditText" />
+
+                    <View style="@style/FormSeparator" />
+                </LinearLayout>
+
+                <LinearLayout style="@style/FormWrapper">
+
+                    <TextView
+                        style="@style/TextViewForm"
+                        android:text="@string/ipp_installment_peroid_filter" />
+
+                    <EditText
+                        android:id="@+id/et_ipp_installment_peroid_filter"
+                        style="@style/Widget.EditText"
+                        android:hint="3,6" />
+
+                    <View style="@style/FormSeparator" />
+                </LinearLayout>
+
+                <LinearLayout style="@style/FormWrapper">
+
+                    <TextView
+                        style="@style/TextViewForm"
+                        android:paddingTop="0dip"
+                        android:text="@string/ipp_installment_type" />
+
+                    <Spinner
+                        android:id="@+id/spinner_installment_type"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_marginLeft="10dip"
+                        android:layout_marginRight="10dip" />
+
+                    <View style="@style/FormSeparator" />
+                </LinearLayout>
+            </LinearLayout>
+
+            <LinearLayout
+                android:layout_width="fill_parent"
+                android:layout_height="wrap_content"
+                android:background="#D1F2EB"
+                android:orientation="vertical">
+
+                <LinearLayout style="@style/FormWrapper">
+
+                    <TextView
+                        style="@style/TextViewForm"
+                        android:text="@string/samsung_pay_header_title" />
+
+                    <TextView
+                        style="@style/TextViewForm"
+                        android:text="@string/samsung_pay_service_id" />
+
+                    <EditText
+                        android:id="@+id/et_samsung_pay_service_id"
+                        style="@style/Widget.EditText" />
+
+                    <View style="@style/FormSeparator" />
+                </LinearLayout>
+
+                <LinearLayout style="@style/FormWrapper">
+
+                    <TextView
+                        style="@style/TextViewForm"
+                        android:text="@string/samsung_pay_merchant_name" />
+
+                    <EditText
+                        android:id="@+id/et_samsung_pay_merchant_name"
+                        style="@style/Widget.EditText" />
+
+                    <View style="@style/FormSeparator" />
+                </LinearLayout>
+            </LinearLayout>
+
+            <LinearLayout
+                android:layout_width="fill_parent"
+                android:layout_height="wrap_content"
+                android:background="#ffe4e1"
+                android:orientation="vertical">
+
+                <LinearLayout style="@style/FormWrapper">
+
+                    <TextView
+                        style="@style/TextViewForm"
+                        android:text="@string/gcash_header_title" />
+
+                    <TextView
+                        style="@style/TextViewForm"
+                        android:text="@string/gcash_account_no" />
+
+                    <EditText
+                        android:id="@+id/et_gcash_account_no"
+                        style="@style/Widget.EditText" />
+
+                    <View style="@style/FormSeparator" />
+                </LinearLayout>
+            </LinearLayout>
+        </LinearLayout>
+    </ScrollView>
+
+</RelativeLayout>
